@@ -7,6 +7,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+      <button className="addButton">+</button>
     </div>
   );
 }

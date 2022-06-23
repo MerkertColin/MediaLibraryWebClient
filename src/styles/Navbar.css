@@ -5,7 +5,7 @@ html {
 nav {
     max-width: var(--nav-dimension);
     height: 100vh;
-    background-color: green;
+    background-color: #f1ab72;
 }
 
 ul {
@@ -26,9 +26,9 @@ li {
     min-height: var(--nav-dimension);
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    background-color:#a52a2a;
+    background-color:#c23f3f;
 }
 
 li:hover {
-    background-color: #c23f3f;
+    background-color: #ce4e4e;
 }
