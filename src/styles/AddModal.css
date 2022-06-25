@@ -1,0 +1,42 @@
+html {
+    --m-rad: 10px;
+}
+
+.overlay {
+    position: fixed;
+    overflow-y: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.397);
+    z-index: 1;
+}
+
+.modal-header {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 6%;
+    border-radius: var(--m-rad) var(--m-rad) 0 0;
+    background-color: rgba(0, 0, 0, 0.288);
+}
+
+.modal {
+    background-color: white;
+    margin: auto;
+    height: 80%;
+    width: 80%;
+    border-radius: var(--m-rad);
+}
+
+.btn-close {
+    border-radius: 100%;
+    background-color: transparent;
+    color: rgb(56, 56, 58);
+    border: none;
+    height: 100%;
+    width: 50px;
+}
+
+.btn-close:hover {
+    background-color: rgba(255, 255, 255, 0.397);
+}

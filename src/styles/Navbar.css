@@ -3,6 +3,8 @@ html {
 }
 
 nav {
+    float: left;
+    display: inline;
     max-width: var(--nav-dimension);
     height: 100vh;
     background-color: #f1ab72;
