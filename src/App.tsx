@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Style } from 'util';
 import './App.css';
 
 import AddModal from './components/AddModal';
@@ -9,6 +8,7 @@ function App() {
   
   const [modalStyle, setModalStyle]= useState<React.CSSProperties>({visibility: "hidden"});
   const [modalIsVisible, setModalIsVisible] = useState(false);
+  
   const updateVisibility = () => {
     const isVisible = !modalIsVisible;
     setModalIsVisible(isVisible);
