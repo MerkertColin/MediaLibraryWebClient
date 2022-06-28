@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, {FunctionComponent} from "react";
+import React, {FunctionComponent, useState} from "react";
 import { MediaTypes } from "../misc/MediaTypes";
 
 interface InputMaskProps {
@@ -9,30 +9,40 @@ interface InputMaskProps {
 
 
 const InputMask: FunctionComponent<InputMaskProps> = ({medium}) => {
-    const onSubmit = (e: any) => {
+    
+    const [inputBody, setInputBody] = useState({})
+    
+    const onSubmitBooks = (e: any) => {
         e.preventDefault();
-        axios.post("http://localhost:1887/books", {
-            firstName: 'Fred',
-            lastName: 'Flintstone'
-        })
+        const body = {
+            author: e.target.bk_author.value,
+            title: e.target.bk_title.value,
+            subtitle: e.target.bk_subtitle.value,
+            state: e.target.state.value
+        }
+        axios.post("http://localhost:1887/books", body)
         .then((res) => console.log(res) )
         .catch((err) => console.log(err))
     }
     
+    const onClick = () => {
+
+    }
+
     if (medium === MediaTypes.Books) {
         return ( 
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmitBooks}>
                 <label htmlFor="bk-author">Author:</label>
-                <input type="text" id="bk-author"></input>
+                <input type="text" id="bk-author" name="bk_author"></input>
                 <label>Title:</label>
-                <input type="text" id="bk-title"></input>
+                <input type="text" id="bk-title" name="bk_title"></input>
                 <label>Subtitle:</label>
-                <input type="text" id="bk-subtitle"></input>
-                <input type="radio" name="state" id="bk-state-finished"></input>
+                <input type="text" id="bk-subtitle" name="bk_subtitle"></input>
+                <input type="radio" name="state" value="finished" id="bk-state-finished"></input>
                 <label>Finished</label>
-                <input type="radio" name="state" id="bk-state-started"></input>
+                <input type="radio" name="state" value="started" id="bk-state-started"></input>
                 <label>Started</label>
-                <input type="radio" name="state" id="bk-state-notstarted"></input>
+                <input type="radio" name="state" value="not started" id="bk-state-notstarted"></input>
                 <label>Not Started</label>
                 <button>Submit</button>
             </form>
